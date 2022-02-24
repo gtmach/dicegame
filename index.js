@@ -5,6 +5,8 @@ var randomNumber2 = 0
 var randomDiceImage1 = 0
 var randomDiceImage2 = 0
 
+var diceSound = new Audio("sounds/diceroll.wav")
+
 function rollDice(){
 randomNumber1 = (Math.floor(Math.random() * 6) + 1);
 randomNumber2 = (Math.floor(Math.random() * 6) + 1);
@@ -23,6 +25,8 @@ document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
   document.querySelector("h1").innerHTML = "Empate!";
 }
 
+ diceSound.play();
+  
 }
 
 document.querySelector("button").addEventListener("click", rollDice);
